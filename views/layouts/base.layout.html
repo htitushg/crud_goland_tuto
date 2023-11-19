@@ -1,0 +1,97 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Henry G. de Barbarin">
+    <meta name="description" content="Un programme web avec entete et bas de page, accès à une SGBD Mysql et templates">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>Crud HB</title>
+
+</head>
+
+<body>
+  <header>
+    <h1 class="entete" >Gestion des utilisateurs</h1>
+    <img src="../../../../css/utilisateurs2.png" id="icone"/>
+    
+    <time class="datesite">13/11/2023</time>
+  </header>
+<!-- Début de l'ajout du 17/11/2023-->  
+  
+
+<nav>
+  <ul>
+  <li class="menu-html"><a href="html.html">HTML</a>
+    <ul class="submenu">
+     <li><a href="#">Cours complet HTML et CSS</a></li>
+     <li><a href="#">Reference des elements HTML</a></li>
+     <li><a href="#">Reference des attributs HTML</a></li>
+     <li><a href="#">Exemples et exercices</a></li>
+  </ul>
+</li>
+<li class="menu-css"><a href="css.html">CSS</a>
+    <ul class="submenu">
+     <li><a href="#">Cours complet HTML et CSS</a></li>
+     <li><a href="#">Reference des proprietes CSS</a></li>
+     <li><a href="#">Exemples et exercices</a></li>
+  </ul>
+</li>
+<li class="menu-javascript"><a href="javascript.html">JavaScript</a>
+    <ul class="submenu">
+     <li><a href="#">Cours complet JavaScript</a></li>
+     <li><a href="#">Exemples et exercices</a></li>
+  </ul>
+</li>
+<li class ="menu-contact"><a href="contact.html">Contact</a>
+
+</li>
+</ul>
+</nav>
+
+
+<!-- Fin de l'ajout du 17/11/2023-->
+
+
+  {{ block "content" . }}
+  {{ end }}
+  <footer>
+    <div id="main">
+      <div class=”footer-services”>
+        <h3>Nos services</h3>
+        <ul class=”liste-services”>
+          <li><a href=”#icone”>Création de sites web</a></li>
+          <li><a href=”#”>SEO</a></li>
+          <li><a href=”#”>SEA</a></li>
+        </ul>
+      </div>
+      <div class=”footer-informations”>
+        <h3>A propos</h3>
+        <ul class=”liste-informations”>
+          <li><a href=”#icone”>Actualités</a></li>
+          <li><a href=”#”>Notre histoire</a></li>
+          <li><a href=”#”>Investisseurs</a></li>
+          <li><a href=”#”>Développement durable</a></li>
+        </ul>
+      </div>
+      <div class=”footer-contact”>
+        <h3>Restons en contact</h3>
+        <p>06 06 06 06 06</p>
+        <p>supportclient@contact.com</p>
+        <p>12 rue de l'invention, Paris, 75011</p>
+      </div>
+    </div>  
+    <div class="copyright">
+      <h3>Les programmeurs débrouillards © 2023</h3>
+      <a> - Site réalisé par Henry G de Barbarin</a>
+      <a> en étroite collaboration avec Antoine</a>
+    </div>
+  
+  </footer>
+</body>
+
+</html>
+{{ end }}
