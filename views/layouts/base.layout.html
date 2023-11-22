@@ -20,42 +20,40 @@
     
     <time class="datesite">13/11/2023</time>
   </header>
-<!-- Début de l'ajout du 17/11/2023-->  
-  
-
-<nav>
-  <ul>
-  <li class="menu-html"><a href="html.html">HTML</a>
-    <ul class="submenu">
-     <li><a href="#">Cours complet HTML et CSS</a></li>
-     <li><a href="#">Reference des elements HTML</a></li>
-     <li><a href="#">Reference des attributs HTML</a></li>
-     <li><a href="#">Exemples et exercices</a></li>
-  </ul>
-</li>
-<li class="menu-css"><a href="css.html">CSS</a>
-    <ul class="submenu">
-     <li><a href="#">Cours complet HTML et CSS</a></li>
-     <li><a href="#">Reference des proprietes CSS</a></li>
-     <li><a href="#">Exemples et exercices</a></li>
-  </ul>
-</li>
-<li class="menu-javascript"><a href="javascript.html">JavaScript</a>
-    <ul class="submenu">
-     <li><a href="#">Cours complet JavaScript</a></li>
-     <li><a href="#">Exemples et exercices</a></li>
-  </ul>
-</li>
-<li class ="menu-contact"><a href="contact.html">Contact</a>
-
-</li>
-</ul>
-</nav>
-
-
-<!-- Fin de l'ajout du 17/11/2023-->
-
-
+  <nav>
+    <ul>
+      <li class="menu-html"><a href="html.html">Livres</a>
+        <ul class="submenu">
+          <li>
+            <a href="/ListeDesLivres">Liste des Livres</a>
+            <!--<form action="/ListeDesLivres" method="post">
+            <button id="subbtn" type="submit" class="bouton3">Liste des Livres</button> 
+            </form>-->
+          </li>
+          <li>
+            <a href="/ListeDesEditeurs">Liste des Editeurs</a>
+            <!--<form action="/ListeDesEditeurs" method="post">
+            <button id="subbtn" type="submit" class="bouton3">Liste des éditeurs</button>
+            </form>-->
+          </li>
+        </ul>
+      </li>
+      <li class="menu-css"><a href="css.html">Utilisateurs</a>
+        <ul class="submenu">
+          <li><a href="/">Liste des Utilisateurs</a></li>
+          <li><a href="#">Reference des proprietes CSS</a></li>
+          <li><a href="#">Exemples et exercices</a></li>
+        </ul>
+      </li>
+      <li class="menu-javascript"><a href="javascript.html">JavaScript</a>
+        <ul class="submenu">
+          <li><a href="#">Cours complet JavaScript</a></li>
+          <li><a href="#">Exemples et exercices</a></li>
+        </ul>
+      </li>
+      <li class ="menu-contact"><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
   {{ block "content" . }}
   {{ end }}
   <footer>

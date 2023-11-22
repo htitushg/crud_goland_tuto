@@ -25,6 +25,53 @@ type User struct {
 	UpdatedAt string
 	DeletedAt string
 }
+type Livre struct {
+	Livre_Id    string
+	Titre       string
+	Editeur_Id  string
+	Isbn        string
+	Description string
+	CreatedAt   string
+	UpdatedAt   string
+	DeletedAt   string
+}
+type UnLivre struct {
+	TitrePage string
+	Titre     string
+	Livre     Livre
+}
+type ListeLivres struct {
+	TitrePage string
+	Nombre    int
+	Titre     string
+	Livres    []Livre
+}
+type Auteur struct {
+	Auteur_Id string
+	Nom       string
+	Prenom    string
+	CreatedAt string
+	UpdatedAt string
+	DeletedAt string
+}
+type Editeur struct {
+	Editeur_Id string
+	Nom        string
+	CreatedAt  string
+	UpdatedAt  string
+	DeletedAt  string
+}
+type UnEditeur struct {
+	TitrePage string
+	Titre     string
+	Editeur   Editeur
+}
+type ListeEditeurs struct {
+	TitrePage string
+	Nombre    int
+	Nom       string
+	Editeurs  []Editeur
+}
 
 var Arr User
 

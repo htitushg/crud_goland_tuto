@@ -1,0 +1,30 @@
+<!doctype html>
+
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+<div class="container">
+    <div >
+        <h1>{{.TitrePage}}</h1>
+    </div>
+    <div class="col"> 
+        <table class="tableh">  
+            <tbody>
+                <a href="/ListeDesLivres"><span class="bouton3">Retour à la liste des livres</span> </a>
+                <form action="/UpdateLivrePost/{{.Livre.Livre_Id}}" method="post">
+                    <tr><th>Id</th><td><input class="datav" type="text" name="Livre_Id" class="form-control" value="{{.Livre.Livre_Id}}"></td></tr>
+                    <tr><th>Titre</th><td><input class="datav" type="text" name="Titre" class="form-control" value="{{.Livre.Titre}}"></td></tr>
+                    <tr><th>Editeur</th><td><input class="datav" type="text" name="Editeur_Id" class="form-control" value="{{.Livre.Editeur_Id}}"></td></tr>
+                    <tr><th>Isbn</th><td><input class="datav" type="text" name="Isbn" class="form-control" value="{{.Livre.Isbn}}"></td></tr>
+                    <tr><th>Description</th><td><input class="datav" type="text" name="Description" class="form-control" value="{{.Livre.Description}}"></td></tr>
+                    <tr><th>CreatedAt</th><td><input class="datav" type="text" name="CreatedAt" class="form-control" value="{{.Livre.CreatedAt}}" readonly></td></tr>
+                    <tr><th>UpdatedAt</th><td><input class="datav" type="text" name="UpdatedAt" class="form-control" value="{{.Livre.UpdatedAt}}" readonly></td></tr>
+                    <input type="submit" class="bouton1" value="Modifier">
+                </form>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{{end}}

@@ -1,0 +1,20 @@
+<!doctype html>
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+<div class="container">
+    <div class="part2">
+        <h1 class = "card-title text-center mb-3" >Tutoriel Crud en Golang</h1>
+        <a href="/ListeDesEditeurs"><span class="bouton3">Retour à la liste des Editeurs</span> </a>
+    </div>
+    <div class="row mt-3">
+        <h1>{{.TitrePage}}</h1>
+        <p>
+            Editeur_Id : {{.Editeur.Editeur_Id}} <br />
+            Nom : {{.Editeur.Titre}} <br />
+        </p>
+    </div>
+</div>
+</div>
+{{end}}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+    <div class="container">
+      <div class="part2">
+        <h1  >Liste des livres inscrits dans la base Mysql</h1>
+        <form action="/AddEditeur" method="post">
+          <button id="subbtn" type="submit" class="bouton3">Ajouter un Editeur</button> 
+        </form>
+      </div>  
+    <div>
+    <table class="table">
+      <thead>
+      <th>Editeur_Id</th>
+      <th>Nom</th>
+      <th>CreatedAt</th>
+      <th>UpdatedAt</th>
+      <th>DeletedAt</th>
+      <th>Actions</th>
+      </thead>
+      <tbody>
+          {{range .Editeurs}}
+          <tr class="tutils">
+            <td class="data">{{.Editeur_Id}}</td>
+            <td class="data">{{.Nom}} </td>
+            <td class="data">{{.CreatedAt}}</td>
+            <td class="data">{{.UpdatedAt}}</td>
+            <td class="data">{{.DeletedAt}}</td>
+            <td class="cell-buttons">
+            <form action="/UpdateEditeur/{{.Editeur_Id}}" method="post">
+              <button id="subbtn" type="submit" class="bouton1">Update</button> 
+            </form>
+            <form action="/DeleteEditeur/{{.Editeur_Id}}" method="post">
+              <button id="subbtn" type="submit" class="bouton2">Delete</button>
+            </form>
+          </td>
+          </tr>
+          {{end}}
+      </tbody>
+    </table>
+      </div>
+    </div>
+  </div>
+  {{end}}

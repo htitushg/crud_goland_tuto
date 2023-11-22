@@ -1,0 +1,40 @@
+<!doctype html>
+
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+
+<div class="container">
+    <div class="">
+        <h1 class = "card-title text-center mb-3" >Tutoriel Crud en Golang</h1>
+    </div>
+    <div class="part2">
+        <h2 class = "" >Ajouter un livre</h2>
+    </div>
+        <div class="col">
+            <table class="tableh"> 
+                <a href="/"><span class="bouton3">Retour à la page d'accueil</span> </a>
+                <form action="/AddLivrePost" method="post">
+                    <button type="submit" class="bouton1" value="Enregistrer">Enregistrer</button>
+                    <tbody>
+                        <tr><th>Titre</th><td><input class="datav" type="text" name="Titre" class="form-control" placeholder="Titre du livre"></td></tr>
+                        <tr><th>Editeur</th>
+                            <td>
+                                <select class="datav form-control" name="Editeur_Id">
+                                    {{range .}}
+                                    <option value="{{.Editeur_Id}}">{{.Editeur_Id}} : {{.Nom}}</option>
+                                    {{end}}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><th>Isbn</th><td><input class="datav" type="isbn" name="Isbn" class="form-control" placeholder="code Isbn"></td></tr>
+                    </tbody>
+                </form>
+            </table>
+            
+            
+        </div>
+    </div>
+</div>    
+{{end}}
