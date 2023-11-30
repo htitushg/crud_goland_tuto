@@ -2,18 +2,18 @@ package config
 
 import "text/template"
 
-type dbase struct {
+/*type dbase struct {
 	host     string
 	port     string
 	user     string
 	password string
 	dbname   string
 	sslmode  string
-}
+}*/
 
-const (
+/*const (
 	Port = ":8090"
-)
+)*/
 
 type User struct {
 	Id        string
@@ -35,6 +35,27 @@ type Livre struct {
 	UpdatedAt   string
 	DeletedAt   string
 }
+type Livre_A struct {
+	Livre_Id    string
+	Titre       string
+	Editeur_Id  string
+	Isbn        string
+	Description string
+	CreatedAt   string
+	UpdatedAt   string
+	DeletedAt   string
+	Auteurs     []Auteur2
+}
+type Auteur2 struct {
+	LMS_Id    string
+	AMS_Id    string
+	AuteurId  string
+	Nom       string
+	Prenom    string
+	CreatedAt string
+	UpdatedAt string
+	DeletedAt string
+}
 type UnLivre struct {
 	TitrePage string
 	Titre     string
@@ -46,6 +67,36 @@ type ListeLivres struct {
 	Titre     string
 	Livres    []Livre
 }
+type ListeAuteurs struct {
+	TitrePage string
+	Nombre    int
+	Titre     string
+	Auteurs   []Auteur
+}
+type LivreAuteur struct {
+	Livre_Id   string
+	Titre      string
+	Editeur_Id string
+	Isbn       string
+	Auteur_Id  string
+	Nom        string
+	Prenom     string
+}
+
+type LivresEtAuteurs2 struct {
+	TitrePage string
+	NombreL   int
+	NombreA   int
+	LivresA   []Livre_A
+}
+type LivresEtAuteurs struct {
+	TitrePage string
+	NombreL   int
+	NombreA   int
+	Livres    []Livre
+	Auteurs   []LivreAuteur
+}
+
 type Auteur struct {
 	Auteur_Id string
 	Nom       string
@@ -65,6 +116,11 @@ type UnEditeur struct {
 	TitrePage string
 	Titre     string
 	Editeur   Editeur
+}
+type UnAuteur struct {
+	TitrePage string
+	Titre     string
+	Auteur    Auteur
 }
 type ListeEditeurs struct {
 	TitrePage string

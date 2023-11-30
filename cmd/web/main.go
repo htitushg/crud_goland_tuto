@@ -5,7 +5,9 @@ import (
 	"crud_golang_tuto/controllers"
 	"crud_golang_tuto/routes"
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -15,9 +17,13 @@ const (
 )
 
 func main() {
+	path, err2 := os.Getwd()
+	if err2 != nil {
+		log.Fatal(err2)
+	}
 	// On relie le fichier css
-	fs := http.FileServer(http.Dir("css"))
-	http.Handle("/css/", http.StripPrefix("/css/", fs))
+	fs := http.FileServer(http.Dir(path + "/assets"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	templateCache, err := controllers.CreateTemplateCache()
 	if err != nil {
@@ -25,11 +31,11 @@ func main() {
 	}
 	var appConfig config.Config
 	appConfig.TemplateCache = templateCache
-	appConfig.Port = ":8070"
+	appConfig.Port = Port
 	controllers.CreateTemplates(&appConfig)
 
 	// Définir les urls de notre application web
 	routes.Web()
-	fmt.Printf("http://localhost%v , Cliquez sur le lien pour lancer le navigateur", Port)
+	fmt.Printf("http://localhost%v , Cliquez sur le lien pour lancer le navigateur", appConfig.Port)
 	http.ListenAndServe(Port, nil)
 }

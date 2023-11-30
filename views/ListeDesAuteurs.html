@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+    <div class="container">
+      <div class="part2">
+        <h1  >{{.TitrePage}}</h1>
+        <form action="/AddAuteur" method="post">
+          <button id="subbtn" type="submit" class="bouton3">Ajouter un Auteur</button> 
+        </form>
+      </div>  
+    <div>
+    <table class="table">
+      <thead>
+      <th>LMS_Id</th>
+      <th>AMS_Id</th>
+      <th>AuteurId</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Actions</th>
+      </thead>
+      <tbody>
+          {{range .Auteurs}}
+          <tr class="tutils">
+            <td class="data">{{.LMS_Id}}</td>
+            <td class="data">{{.AMS_Id}}</td>
+            <td class="data">{{.AuteurId}}</td>
+            <td class="data">{{.Nom}} </td>
+            <td class="data">{{.Prenom}} </td>
+            <td class="cell-buttons">
+            <form action="/UpdateAuteur/{{.AuteurId}}" method="post">
+              <button id="subbtn" type="submit" class="bouton1">Update</button> 
+            </form>
+            <form action="/DeleteAuteur/{{.AuteurId}}" method="post">
+              <button id="subbtn" type="submit" class="bouton2">Delete</button>
+            </form>
+          </td>
+          </tr>
+          {{end}}
+      </tbody>
+    </table>
+      </div>
+    </div>
+  </div>
+  {{end}}

@@ -12,6 +12,7 @@
         <table class="tableh">  
             <tbody>
                 <a href="/ListeDesLivres"><span class="bouton3">Retour à la liste des livres</span> </a>
+                <a href="/AfficheAuteursduLivre/{{.Livre.Livre_Id}}"><span class="bouton3">Affiche les auteurs d'un livre</span> </a>
                 <form action="/UpdateLivrePost/{{.Livre.Livre_Id}}" method="post">
                     <tr><th>Id</th><td><input class="datav" type="text" name="Livre_Id" class="form-control" value="{{.Livre.Livre_Id}}"></td></tr>
                     <tr><th>Titre</th><td><input class="datav" type="text" name="Titre" class="form-control" value="{{.Livre.Titre}}"></td></tr>

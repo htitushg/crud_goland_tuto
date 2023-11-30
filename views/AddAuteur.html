@@ -1,0 +1,31 @@
+<!doctype html>
+
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+
+<div class="container">
+    <div class="">
+        <h1 class = "card-title text-center mb-3" >Tutoriel Crud en Golang</h1>
+    </div>
+    <div class="part2">
+        <h2 class = "" >Ajouter un Auteur</h2>
+    </div>
+        <div class="col">
+            <table class="tableh"> 
+                <a href="/ListeDesAuteurs"><span class="bouton3">Retour à la page d'accueil</span> </a>
+                <form action="/AddAuteurPost" method="post">
+                    <button type="submit" class="bouton1" value="Enregistrer">Enregistrer</button>
+                    <tbody>
+                        <tr><th>Nom de l'auteur</th><td><input class="datav" type="text" name="Nom" class="form-control" placeholder="Nom de l'auteur"></td></tr>
+                        <tr><th>Prenom de l'auteur</th><td><input class="datav" type="text" name="Prenom" class="form-control" placeholder="Prenom de l'auteur"></td></tr>
+                    </tbody>
+                </form>
+            </table>
+            
+            
+        </div>
+    </div>
+</div>    
+{{end}}

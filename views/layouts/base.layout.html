@@ -1,23 +1,21 @@
 {{ define "base" }}
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Henry G. de Barbarin">
     <meta name="description" content="Un programme web avec entete et bas de page, accès à une SGBD Mysql et templates">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="/static/css/style2.css">
+    <link rel="icon" href="/static/faviconhb.png" type="image/x-icon">
+    <!--<link rel=”shortcut icon” href=”/css/faviconhb.png” type=”image/png”>-->
     <title>Crud HB</title>
-
 </head>
-
 <body>
   <header>
     <h1 class="entete" >Gestion des utilisateurs</h1>
-    <img src="../../../../css/utilisateurs2.png" id="icone"/>
-    
+    <img src="/static/css/utilisateurs2.png"
     <time class="datesite">13/11/2023</time>
   </header>
   <nav>
@@ -32,6 +30,18 @@
           </li>
           <li>
             <a href="/ListeDesEditeurs">Liste des Editeurs</a>
+            <!--<form action="/ListeDesEditeurs" method="post">
+            <button id="subbtn" type="submit" class="bouton3">Liste des éditeurs</button>
+            </form>-->
+          </li>
+          <li>
+            <a href="/AfficheLivresEtAuteurs">Liste des Livres et des auteurs</a>
+            <!--<form action="/ListeDesEditeurs" method="post">
+            <button id="subbtn" type="submit" class="bouton3">Liste des éditeurs</button>
+            </form>-->
+          </li>
+          <li>
+            <a href="/ListeDesAuteurs">Liste des auteurs</a>
             <!--<form action="/ListeDesEditeurs" method="post">
             <button id="subbtn" type="submit" class="bouton3">Liste des éditeurs</button>
             </form>-->

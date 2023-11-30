@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+    <div class="container">
+      <div class="part2">
+        <h1  >Liste des livres inscrits dans la base Mysql</h1>
+        <form action="/AddLivre" method="post">
+          <button id="subbtn" type="submit" class="bouton3">{{.TitrePage}}</button> 
+        </form>
+      </div>  
+    <div>
+    <table class="table">
+      <thead>
+      <th>Livre_Id</th>
+      <th>Titre</th>
+      <th>Editeur</th>
+      <th>Isbn</th>
+      <th>CreatedAt</th>
+      <th>UpdatedAt</th>
+      <th>DeletedAt</th>
+      <th>Auteur_Id</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Actions</th>
+      </thead>
+      <tbody>
+          {{range .LivresA}}
+          <tr class="tutils">
+            <td class="data">{{.Livre_Id}}</td>
+            <td class="data">{{.Titre}} </td>
+            <td class="data">{{.Editeur_Id}}</td>
+            <td class="data">{{.Isbn}}</td>
+            <td class="data">{{.CreatedAt}}</td>
+            <td class="data">{{.UpdatedAt}}</td>
+            <td class="data">{{.DeletedAt}}</td>
+            {{range .Auteurs}}
+            
+            <td class="data">{{.AuteurId}}</td>
+            <td class="data">{{.Nom}}</td>
+            <td class="data">{{.Prenom}}</td>
+            
+            {{end}}
+            <td class="cell-buttons">
+            <form action="/UpdateLivre/{{.Livre_Id}}" method="post">
+              <button id="subbtn" type="submit" class="bouton1">Update</button> 
+            </form>
+            <form action="/DeleteLivre/{{.Livre_Id}}" method="post">
+              <button id="subbtn" type="submit" class="bouton2">Delete</button>
+            </form>
+          </td>
+          </tr>
+          {{end}}
+      </tbody>
+    </table>
+      </div>
+    </div>
+  </div>
+  {{end}}

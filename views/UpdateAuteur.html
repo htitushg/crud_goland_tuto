@@ -1,0 +1,28 @@
+<!doctype html>
+
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="corps">
+<div class="container">
+    <div >
+        <h1>{{.TitrePage}}</h1>
+    </div>
+    <div class="col"> 
+        <table class="tableh">  
+            <tbody>
+                <a href="/ListeDesAuteurs"><span class="bouton3">Retour à la liste des Auteurs</span> </a>
+                <form action="/UpdateAuteurPost/{{.Auteur.Auteur_Id}}" method="post">
+                    <tr><th>Auteur_Id</th><td><input class="datav" type="text" name="Auteur_Id" class="form-control" value="{{.Auteur.Auteur_Id}}" readonly></td></tr>
+                    <tr><th>Nom</th><td><input class="datav" type="text" name="Nom" class="form-control" value="{{.Auteur.Nom}}"></td></tr>
+                    <tr><th>Prenom</th><td><input class="datav" type="text" name="Prenom" class="form-control" value="{{.Auteur.Prenom}}"></td></tr>
+                    <tr><th>CreatedAt</th><td><input class="datav" type="text" name="CreatedAt" class="form-control" value="{{.Auteur.CreatedAt}}" readonly></td></tr>
+                    <tr><th>UpdatedAt</th><td><input class="datav" type="text" name="UpdatedAt" class="form-control" value="{{.Auteur.UpdatedAt}}" readonly></td></tr>
+                    <input type="submit" class="bouton1" value="Modifier">
+                </form>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{{end}}
